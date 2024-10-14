@@ -1,4 +1,4 @@
-# Usage of El-Shortener Link API
+# Usage of API
 
 ### Run HTTP Server Command
 
