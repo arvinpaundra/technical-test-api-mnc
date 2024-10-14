@@ -1,0 +1,5 @@
+app_port: 8080
+app_mode: development
+base_url_app: http://localhost:8080
+postgres:
+  dsn: host=localhost user=root password=root dbname=banking_db port=5432 sslmode=disable TimeZone=Asia/Jakarta

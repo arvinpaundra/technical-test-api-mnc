@@ -1,0 +1,27 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: api
+    volumes:
+      - ${PWD}/config.yaml:/app/config.yaml
+    ports:
+      - '8080:8080'
+    depends_on:
+      - postgresql
+
+  postgresql:
+    image: postgres:alpine
+    container_name: postgresql
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+    ports:
+      - '8081:5432'
+    volumes:
+      - postgresql-volume:/var/lib/postgresql/data
+    restart: on-failure:3
+
+volumes:
+  postgresql-volume:
